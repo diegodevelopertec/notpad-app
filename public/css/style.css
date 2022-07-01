@@ -1,0 +1,238 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    font-family:sans-serif;
+    
+}
+
+.container{
+    grid-template-areas: ' header'
+                         'main';     
+           
+    height: 100%;
+}
+
+
+header{
+    padding: 10px;
+    grid-area:header;
+    background-color: rgb(31, 31, 87);
+    color: #EEE;
+}
+
+/** estilos das anotacoes **/
+main{
+    height: 100%;
+    grid-area:main;
+ display: flex;
+  align-items: center;
+    flex-direction: column;
+}
+
+.container-content{
+    background-color: #eee;
+     width: 90%;
+   padding:  4%;
+    display: flex;
+    height:100%;
+    min-height: 100vh;
+   display:flex;
+ justify-content: center;
+    flex-wrap: wrap;
+    font-size: 13px;
+    
+    
+}
+
+
+.card-model{
+    background-color: rgb(170, 199, 200);
+    width: 280px;
+    padding: 1%;
+   width: 300px;
+   height: 260px;
+    margin-top: 1%;
+  margin-right: 1%;
+display: flex;
+flex-direction: column;
+box-shadow: 0px 0px 2px rgb(158, 172, 210);
+}
+.card-model:hover{
+    background-color:  rgba(42, 197, 202, 0.491); 
+}
+.card-model .card-info{
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+}
+
+.card-model .cx-content{
+    display:flex;
+    justify-content: center;
+    padding: 1%;
+}
+
+.card-model textarea{
+    width: 100%;
+    resize: none;
+    background-color: rgb(224, 254, 255);
+    border: none;
+    padding: 1%;
+}
+
+
+/** estilos do modal **/
+
+.modal-notes{
+    width: 50%;
+    min-width: 240px;
+    background-color: rgb(170, 199, 200);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgb(67, 67, 176);
+}
+
+#container-modal{
+    padding: 10px 0px;
+    width: 90%;
+    margin-top:5%;
+    position: fixed;
+  justify-content: center;
+  display: none;
+  
+    
+    
+}
+
+
+.modal-notes .cx-info{
+    display: flex;
+ margin-bottom: 10px;
+}
+
+.modal-notes .cx-info span{
+   
+    background-color: #eee;
+    text-align: center;
+    padding: 10px;
+}
+.modal-notes .cx-info input{
+    width: 90%;
+    border:0;
+    padding: 10px;
+}
+
+
+.modal-notes .cx-info-note{
+display: flex;
+flex-direction: column;
+}
+
+.modal-notes .cx-info-note span{
+    padding: 10px;
+    background-color: #eee;
+    text-align: center;
+}
+.modal-notes .cx-info-note  textarea{
+    resize: none;
+    border:0;
+    padding: 10px;
+   
+   
+}
+
+.modal-notes .cx-buttons{
+    display: flex;
+}
+.modal-notes .cx-buttons button{
+    flex: 1;
+    padding: 10px;
+    margin: 10px 5px;
+    border: none;
+    color: #FFF;
+    border-radius: 10PX;
+}
+
+.modal-notes .cx-buttons #cancel-note{
+background-color: rgb(213, 64, 64);
+}
+
+.modal-notes .cx-buttons #cancel-note:hover{
+    background-color: rgb(172, 27, 27); 
+    cursor: pointer;
+}
+.modal-notes .cx-buttons #add-note{
+    background-color: rgb(82, 224, 82)
+}
+.modal-notes .cx-buttons #add-note:hover{
+    background-color: rgb(44, 203, 44);
+    cursor:pointer;
+}
+
+
+.start-modal{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    background-color: rgb(59, 59, 122);
+    position: fixed;
+    top: 40vh;
+    left: 88%;
+    margin-right: 20px;
+    border: none;
+    color: #EEE;
+}
+
+.start-modal:hover{
+    background-color: rgb(37, 37, 145);
+    cursor: pointer;
+   
+}
+/**responsividade **/
+@media screen and (max-width:912px){
+    .container-content{
+        width: 100%;
+     flex-direction: column;
+justify-content:flex-start;
+display: block;
+     
+    }
+    .start-modal{
+        left: 80%;
+    }
+  
+
+    .card{
+        background-color: rgb(170, 199, 200);
+        max-height: 100px;
+        width: 100%;
+        padding: 1%;
+     
+    }
+    
+    .card .card-info{
+        display: flex;
+        justify-content: space-between;
+      
+    }
+
+    .card-model{
+        background-color: rgb(170, 199, 200);
+        padding: 1%;
+       width: 100%;
+       height: 70px;
+        margin-top: 1%;
+    padding-bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    }
+    .card-model textarea{
+        display: none;
+    }
+
+    .modal-notes .cx-info-note span{
+    
+        text-align: center;
+    }
+}

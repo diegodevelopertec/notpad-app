@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            Bloco de Notas
+        </header>
+        
+        <main>
+           
+          
+            <div class="container-content">
+                <div class="card-model">
+                    <div class="card-info">
+                             <div class="info-title"> info title</div>
+                             <div class="info-dataNote">dateNote</div>
+                        
+                    </div>
+                    <div class="cx-content">
+                        <textarea name="" id="card-note" class="note-no-edit"  cols="30" rows="10"> </textarea>
+                     </div>
+                    
+                </div>
+                  
+
+                <button title="criar nova anotação" class="start-modal">
+                    +
+                </button>
+
+              
+            </div>
+            <div id="container-modal"  >
+                <div class="modal-notes ">
+                        <form action="" method="post" >
+                            <div class="cx-info">
+                                <span>Titulo</span>
+                                <input type="text" id="cx-title">
+                            </div>
+                            <div class="cx-info-note">
+                                <span>
+                                    Anotação
+                                </span>
+                                <textarea  name="" id="cx-anotacao" cols="30" rows="10"></textarea>
+                            </div>
+                        </form>
+                 <div class="cx-buttons">
+                     <button id="cancel-note">cancelar</button>
+                     <button id="add-note" >salvar</button>
+                 </div>
+ 
+                </div>
+             </div>
+            
+        </main>
+
+
+    </div>
+    
+  
+    <script type="module" src="/public/js/index.js"></script>
+</body>
+</html>
