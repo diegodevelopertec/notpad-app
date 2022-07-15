@@ -26,82 +26,19 @@ type data={
 
 let d=new Date()
 
-let listNotes:data[]=[
-    /*
-    {id:1,title:'Aprenda HTML E CSS ',content:'alguma nota qualquer',dateNote:d.toLocaleDateString()},
-    {id:2,title:'Aprenda Javascript e Typescript',content:'alguma nota qualquer',dateNote:d.toLocaleDateString()},
-    {id:3,title:'Aprenda React',content:'alguma nota qualquer',dateNote:d.toLocaleDateString()},
-    {id:4,title:'Aprenda Node e Express',content:'alguma nota qualquer',dateNote:d.toLocaleDateString()},
-    {id:5,title:'Aprenda MYSQL e Mongo',content:'alguma nota qualquer',dateNote:d.toLocaleDateString()},
-    {id:5,title:'Aprenda React Native',content:'alguma nota qualquer',dateNote:d.toLocaleDateString()},
-    {id:1,title:'Aprenda PHP ',content:'alguma nota qualquer',dateNote:d.toLocaleDateString()},
-    {id:2,title:'Aprenda Ruby on Rails',content:'alguma nota qualquer',dateNote:d.toLocaleDateString()},
-    {id:3,title:'sei lá 3',content:'alguma nota qualquer',dateNote:d.toLocaleDateString()},
-    {id:4,title:'sei lá 4',content:'alguma nota qualquer',dateNote:d.toLocaleDateString()},
-    {id:5,title:'sei lá 5',content:'alguma nota qualquer',dateNote:d.toLocaleDateString()},
-    {id:5,title:'sei lá 5',content:'alguma nota qualquer',dateNote:d.toLocaleDateString()}
-    */
-]
+let listNotes:data[]=[]
 
 
- /*
-      let displayAnnotations=()=>{
-        
-        listNotes.map((item,index)=>{
-    containerMainNotes.innerHTML+=` <div data-id=${item.id} class="card-model">
-            <div class="card-info">
-                     <div class="info-title">${item.title }</div>
-                     <div class="info-dataNote">${item.dateNote }</div>
-                
-            </div>
-            <div class="cx-content">
-                <textarea name="" id="card-note" class="note-no-edit"  cols="30" rows="10">${item.content}</textarea>
-             </div>
-            
-            </div>
-            
-            `
-             })
+ 
 
-
-        }
-           
-    
-      */
-    
-
-
-function setListNote(){
-    
-    for(let i:number=0;i<listNotes.length;i++){
-        listNotes.map((item,index)=>{
-            containerMainNotes.innerHTML+=` <div data-id=${item.id} class="card-model">
-                    <div class="card-info">
-                             <div class="info-title">${item.title }</div>
-                             <div class="info-dataNote">${item.dateNote }</div>
-                        
-                    </div>
-                    <div class="cx-content">
-                        <textarea name="" id="card-note" class="note-no-edit"  cols="30" rows="10">${item.content}</textarea>
-                     </div>
-                    
-                    </div>
-                    
-                    `
-                     })
-                     break
-    }
-}
-
-setListNote()
 
 
 
 
 let addNewNote=()=>{
     let titleInput=el('#cx-title') as HTMLInputElement
-let contentInput=el('#cx-anotacao') as HTMLInputElement
-    if(titleInput.value !== '' && contentInput.value !== ''){
+    let contentInput=el('#cx-anotacao') as HTMLInputElement
+      if(titleInput.value !== '' && contentInput.value !== ''){
            titulo=titleInput.value
           conteudo=contentInput.value
 
@@ -112,13 +49,29 @@ let contentInput=el('#cx-anotacao') as HTMLInputElement
                     content:conteudo,
                     dateNote:d.toLocaleDateString()
                 })
-
+                 
+                let newNote=document.createElement('span')
+                newNote.innerHTML=`
+                
+                <div class="card-model">
+                <div class="card-info">
+                         <div class="info-title">${titleInput.value}</div>
+                         <div class="info-dataNote">${d.toLocaleDateString()}</div>
+                    
+                </div>
+                <div class="cx-content">
+                    <textarea name="" id="card-note" class="note-no-edit"  cols="30" rows="10">${contentInput.value}</textarea>
+                 </div>
+                
+            </div>
+                
+                
+                `
+                containerMainNotes.insertBefore(newNote,containerMainNotes.childNodes[0])
                
                 console.log(listNotes);
                 titleInput.value='' 
                 contentInput.value= ''
-
-                setListNote()
 
                 containerModal.style.display='none'
                 containerMainNotes.style.opacity='1.0' 
@@ -129,6 +82,10 @@ let contentInput=el('#cx-anotacao') as HTMLInputElement
         alert('Os campos não estão preenchidos')
     }
 }
+
+
+
+
 
 
 
